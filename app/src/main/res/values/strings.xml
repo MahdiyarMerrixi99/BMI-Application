@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">BMI App</string>
+    <string name="male">Male</string>
+    <string name="female">Famale</string>
+    <string name="weight">Weight</string>
+    <string name="weight55">55</string>
+    <string name="age">Age</string>
+    <string name="Age22">22</string>
+    <string name="height">Height</string>
+    <string name="height170">Height</string>
+    <string name="cm">cm</string>
+    <string name="result">Result</string>
+    <string name="gender">gender</string>
+</resources>
