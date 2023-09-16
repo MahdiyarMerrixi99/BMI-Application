@@ -1,88 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#292929"
     tools:context=".SplahActivity">
 
-    <ImageView
-        android:layout_marginTop="42dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:id="@+id/imageview"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@+id/contentlayout"
-        app:layout_constraintTop_toTopOf="parent"
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/lottie_splash"
+        android:layout_width="match_parent"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="@dimen/x3"
+        android:layout_marginStart="@dimen/x3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="250dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textview_health"
         android:layout_width="match_parent"
-        android:layout_height="120dp"/>
-
-    <RelativeLayout
-        android:id="@+id/contentlayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:background="#1C1C1C"
-        android:padding="20dp">
-
-        <TextView
-            android:id="@+id/genderdisplay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
-            android:text="@string/gender"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/bmicatogry"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/genderdisplay"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
-            android:text="@string/result"
-            android:textColor="@color/white"
-            android:textSize="22sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/bmidisplay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/bmicatogry"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="14dp"
-            android:background="#FB0000"
-            android:text="@string/weight55"
-            android:textColor="#FFEB3B"
-            android:textSize="44sp"
-            android:textStyle="bold" />
-
-    </RelativeLayout>
-
-    <android.widget.Button
-        android:id="@+id/recalculatembi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/contentlayout"
-        android:layout_marginTop="92dp"
-        android:layout_marginStart="@dimen/dp10"
-        android:layout_marginEnd="@dimen/dp10"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:textColor="@color/black"
-        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/lottie_splash"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="@dimen/x3"
+        android:text="isdjiofjsiod"
+        android:gravity="center"
+        android:textColor="@color/white"
         android:textSize="@dimen/x5"
-        android:background="#FF0000"
-        android:text="Back" />
+        android:textStyle="bold"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textview_result"
+        android:layout_width="match_parent"
+        android:text="55"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview_health"
+        android:layout_height="wrap_content"/>
 
 
-</RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/back_button"
+            android:layout_width="match_parent"
+            android:background="@drawable/button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textview_result"
+            android:layout_margin="@dimen/x5"
+            android:text="Back"
+            android:layout_height="wrap_content"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

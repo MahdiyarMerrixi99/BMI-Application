@@ -18,13 +18,8 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
-    String typeofuser="";
-    String mintprogress="170";
-    int currentprogress;
-    int intage=28;
-    int intweight=55;
-    String strAge="";
-    String strWeight="";
+    String typeofuser="", mintprogress="170", strAge="",strWeight="";;
+    int currentprogres, intage=28,intweight=55,height=170;
 
     @SuppressLint("ResourceAsColor")
     @Override
@@ -70,18 +65,10 @@ public class MainActivity extends AppCompatActivity {
         binding.currentage.setTypeface(Typeface.DEFAULT_BOLD);
         binding.decrementage.setImageResource(R.drawable.minus);
         binding.incrementage.setImageResource(R.drawable.ic_baseline_add_circle_outline_24);
-        binding.calculatembmi.setText("Result");
-        binding.calculatembmi.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-        binding.calculatembmi.setTypeface(Typeface.DEFAULT_BOLD);
-        binding.calculatembmi.setTextSize(16);
-
-
-
-
-
-
-
-
+        binding.resultbutton.setText("Result");
+        binding.resultbutton.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+        binding.resultbutton.setTypeface(Typeface.DEFAULT_BOLD);
+        binding.resultbutton.setTextSize(16);
 
 
         binding.male.setOnClickListener(view -> {
@@ -98,13 +85,13 @@ public class MainActivity extends AppCompatActivity {
 
         binding.currentheight.setText("170");
         binding.seekbarforheight.setMax(300);
-        binding.seekbarforheight.setProgress(170);
+        binding.seekbarforheight.setProgress(height);
 
         binding.seekbarforheight.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                currentprogress=i;
-                mintprogress=String.valueOf(i);
+                currentprogres=i;
+                mintprogress=String.valueOf(currentprogres);
                 binding.currentheight.setText(mintprogress);
             }
             @Override
@@ -136,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
             binding.currentweight.setText(strWeight);
         });
 
-        binding.calculatembmi.setOnClickListener(view -> {
+        binding.resultbutton.setOnClickListener(view -> {
             if (typeofuser.equals("")) {
                 Snackbar snackbar = Snackbar.make(binding.coordinator, "Select your Gender", Snackbar.LENGTH_LONG);
                 snackbar.show();
@@ -154,8 +141,8 @@ public class MainActivity extends AppCompatActivity {
                 Bundle bundle = new Bundle();
                 bundle.putString(Const.GENDER, typeofuser);
                 bundle.putString(Const.HEIGHT, mintprogress);
-                bundle.putString(Const.WEIGHT, strWeight);
-                bundle.putString(Const.AGE, strAge);
+                bundle.putString(Const.WEIGHT, String.valueOf(intweight));
+                bundle.putString(Const.AGE, String.valueOf(intage));
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
