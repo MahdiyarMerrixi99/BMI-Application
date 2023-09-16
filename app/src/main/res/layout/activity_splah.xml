@@ -27,21 +27,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="@dimen/x3"
-        android:text="isdjiofjsiod"
-        android:gravity="center"
         android:textColor="@color/white"
-        android:textSize="@dimen/x5"
-        android:textStyle="bold"
         android:layout_height="wrap_content"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textview_result"
         android:layout_width="match_parent"
-        android:text="55"
-        android:textSize="20sp"
         android:textColor="@color/white"
-        android:textStyle="bold"
-        android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textview_health"

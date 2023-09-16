@@ -6,6 +6,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.Html;
@@ -35,6 +36,12 @@ public class SplahActivity extends AppCompatActivity {
         intbmi=intweight/(intheight*intheight);
         String intbmi2= String.valueOf(intbmi);
 
+        binding.textviewHealth.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+        binding.textviewHealth.setTextSize(20);
+        binding.textviewHealth.setTypeface(Typeface.DEFAULT_BOLD);
+        binding.textviewResult.setTypeface(Typeface.DEFAULT_BOLD);
+        binding.textviewResult.setTextSize(20);
+        binding.textviewResult.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         if (intbmi<16)
         {
             binding.textviewHealth.setText("severe Thinness");
